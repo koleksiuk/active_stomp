@@ -31,7 +31,11 @@ Queue that receiver needs to subscribe (default to 'queue/stomp')
 How client should respond to messages. Default - 'client'. Other options: auto.
 
 ```ruby
-config =  { stomp: { hosts: { host: "localhost", port: 61613, user: '', pass: "", ssl: false } }, queue: '/queue/dummy' }
+config =  { stomp: { 
+              hosts: { host: "localhost", port: 61613, user: '', pass: "", ssl: false } 
+            }, 
+            queue: '/queue/dummy' 
+          }
 
 receiver = ActiveStomp::Base.new(config)
 
