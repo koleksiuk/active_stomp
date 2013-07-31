@@ -21,13 +21,13 @@ Or install it yourself as:
 Create an instance of ActiveStomp::Base with hash config and then just start it with block
 
 Config options:
-* :stomp [required]
+* **:stomp [required]**  
 https://github.com/stompgem/stomp#hash-login-example-usage-this-is-the-recommended-login-technique
 
-* :queue [optional]
+* **:queue [optional]**  
 Queue that receiver needs to subscribe (default to 'queue/stomp')
 
-* :respond [optional
+* **:respond [optional]**  
 How client should respond to messages. Default - 'client'. Other options: auto.
 
 ```ruby
