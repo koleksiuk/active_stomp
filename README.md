@@ -18,7 +18,36 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create an instance of ActiveStomp::Base with hash config and then just start it with block
+
+Config options:
+* :stomp [required]
+https://github.com/stompgem/stomp#hash-login-example-usage-this-is-the-recommended-login-technique
+
+* :queue [optional]
+Queue that receiver needs to subscribe (default to 'queue/stomp')
+
+* :respond [optional
+How client should respond to messages. Default - 'client'. Other options: auto.
+
+```ruby
+config =  { stomp: { hosts: { host: "localhost", port: 61613, user: '', pass: "", ssl: false } }, queue: '/queue/dummy' }
+
+receiver = ActiveStomp::Base.new(config)
+
+receiver.start do |message|
+  begin
+    # do something here with received message
+    # e.g. parse
+    msg = JSON.parse(message)
+    save!(msg)
+
+    :ack # notify that everything is ok
+  rescue
+    :error # something went wrong!
+  end
+end
+```
 
 ## Contributing
 
