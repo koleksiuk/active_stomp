@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Konrad Oleksiuk"]
   spec.email         = ["konrad@up-next.com"]
   spec.description   = %q{ActiveStomp allows to abstract the Stomp protocol}
+  spec.summary       = %q{Thanks to ActiveStomp you can stop thinking about Stomp details when dealing with ActiveMQ queues}
   spec.homepage      = "https://github.com/koleksiuk/active_stomp"
   spec.license       = "MIT"
 
